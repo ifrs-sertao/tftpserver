@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  server:
+    image: tiagojferreira/tftpserver:v0.1
+    ports:
+      - "69:69/udp"
+    volumes:
+      - /srv/tftpboot:/srv/tftpboot:ro
+    restart: unless-stopped
