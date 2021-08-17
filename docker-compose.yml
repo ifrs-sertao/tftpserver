@@ -1,10 +1,11 @@
 version: '3'
 
 services:
-  server:
+  tftpserver:
+    container_name: tftp_server
     image: tiagojferreira/tftpserver:v0.1
     ports:
       - "69:69/udp"
     volumes:
-      - /srv/tftpboot:/srv/tftpboot:ro
+      - ./srv/tftpboot:/srv/tftpboot:ro
     restart: unless-stopped
